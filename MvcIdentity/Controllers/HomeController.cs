@@ -18,22 +18,16 @@ namespace MvcIdentity.Controllers
             return "This action method is not defined authorize";
         }
 
-        [Authorize]
-        public string Authorise()// hit in url then can't open this method without login/register
-        {
-            return "This action method is defined authorize";
-        }
-
         [Authorize(Roles = "Admin")]
         public string RoleAuthorise()// hit in url then can't open this method without admin login
         {
-            return "This action method is defined authorize";
+            return "This action method is open when admin login";
         }
 
         [Authorize(Roles = "User")]
         public string UserMethod()// hit in url then can't open this method without user login
         {
-            return "This action method is defined authorize";
+            return "This action method is open when user authorize";
         }
 
         public ActionResult About()
